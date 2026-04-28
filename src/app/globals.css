@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-gray-900 bg-white;
+  }
+}
+
+@media print {
+  @page {
+    size: letter;
+    margin: 0.5in;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: white !important;
+  }
+
+  .print\:break-before-page {
+    page-break-before: always;
+    break-before: page;
+  }
+  
+  .print\:break-after-page {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .print\:avoid-break-inside {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
